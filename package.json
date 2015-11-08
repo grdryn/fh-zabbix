@@ -1,0 +1,35 @@
+{
+  "name": "fh-zabbix",
+  "description": "Provides Docker image that is indeded to configure an OpenShift Zabbix container.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feedhenry/fh-zabbix.git"
+  },
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "node run.sh ./config/config.json"
+  },
+  "main": "./lib/fh_zabbix.js",
+  "engines": {
+    "node": ">=0.8"
+  },
+  "dependencies": {
+    "async-waterfall": "^0.1.5",
+    "request": "^2.55.0"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "grunt": "^0.4.5",
+    "grunt-fh-build": "^0.3.1",
+    "grunt-mocha": "^0.4.13",
+    "grunt-mocha-istanbul": "^3.0.1",
+    "grunt-mocha-test": "^0.12.7",
+    "istanbul": "^0.3.17",
+    "mocha": "2.3.1",
+    "proxyquire": "^1.6.0",
+    "rewire": "^2.3.4",
+    "sinon": "^1.17.2"
+  }
+}

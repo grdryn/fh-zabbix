@@ -1,0 +1,47 @@
+{
+  "zabbix": { 
+    "hostGroup": "FeedHenry",
+    "host": {
+      "host": "MBaaS Host",
+      "interfaces": [
+        {
+          "type": 1,
+          "main": 1,
+          "useip": 1,
+          "ip": "127.0.0.1",
+          "dns": "",
+          "port": "10050"
+        }
+      ]
+    },
+    "webscenarios": {
+      "name": "FeedHenry MBaaS Health checks",
+      "steps": [
+        {
+          "name": "FH-MBaas Service Ping",
+          "url": "fh-mbaas-service:8080/sys/info/ping",
+          "status_codes": 200,
+          "no": 2
+        },
+        {
+          "name": "FH-Metrics Service Ping",
+          "url": "fh-metrics-service:8080/sys/info/ping",
+          "status_codes": 200,
+          "no": 2
+        },
+        {
+          "name": "FH-Messaging Service Ping",
+          "url": "fh-messaging-service:8080/sys/info/ping",
+          "status_codes": 200,
+          "no": 2
+        },
+        {
+          "name": "FH-Statsd Service Ping",
+          "url": "fh-statsd-service:8080/sys/info/ping",
+          "status_codes": 200,
+          "no": 2
+        }
+      ]
+    }
+  }
+}
